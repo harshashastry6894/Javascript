@@ -1,0 +1,37 @@
+Linear  Search:
+	In built funvtions -> indexOf, includes, find, findIndex
+
+//code	
+const linearSearch = (arr, value) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === value) return i;
+    }
+    return -1;
+}
+
+time complexity
+	best: O(1)
+	average: O(n)
+	worst: O(n)
+	
+Binary Search:
+	Faster form of search
+	Eliminates half of the remaining elements at a time
+	works on sorted arrays
+
+// code
+const binarySearch = (arr, value) => {
+    let left = 0, right = arr.length - 1;
+    let mid = Math.floor((left + right) / 2);
+    while (left <= right) {
+        if (arr[mid] === value) return mid;
+        else if (arr[mid] > value) right = mid - 1;
+        else left = mid + 1;
+        mid = Math.floor((left + right) / 2);
+    }
+    return -1;
+}
+
+time complexity
+	best: O(1)
+	worst naverage: O(logn) log to the base 2
