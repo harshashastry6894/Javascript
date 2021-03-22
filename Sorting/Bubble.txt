@@ -1,0 +1,55 @@
+Sorting in javascript:
+    sort() -> sort the array element in unicode character (Alpabhetically, Descending)
+	sort((a,b) => a-b) -> sort in ascending order
+
+Bubble sort:
+	A sorting algorithm where the largest value bubble up to the top
+	
+Implemenation:
+	psuedo code:
+		1. start looping i varaible from end of the array[length -1] to beginning 0
+		2. start inner loop with the variable j from beginning till less than i
+		3. if a[j] > a[j+1] -> swap
+		4. return sorted array
+
+Code:
+	const bubbleSort = (arr) => {
+    for (let i = arr.length - 1; i >= 0; i--) {
+        for (let j = 0; j < i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                const temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+console.log(bubbleSort([37, 45, 29, 8, 12, 88, -3]));
+
+Note: swap can also be done in js using [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+
+Optimization: If there is no swap for 1 iteration then it means array is sorted 
+	const bubbleSort = (arr) => {
+		let noSwap = true;
+		for (let i = arr.length - 1; i >= 0; i--) {
+			for (let j = 0; j < i; j++) {
+				if (arr[j] > arr[j + 1]) {
+					const temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+					noSwap = false;
+				}
+			}
+			if (noSwap) break;
+		}
+		return arr;
+	}
+
+	console.log(bubbleSort([8, -3, 12, 29, 45, 88, 97]));
+
+time complexity
+	best: O(n)
+	worst naverage: O(n2)
+	
