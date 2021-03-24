@@ -1,0 +1,28 @@
+Insertion sort:
+	builds up the sort by gradually creating a larger left half which is always sorted
+
+Implemenation:
+	psuedo code:
+		1. start picking the second element in the array
+		2. compare second element with one before it and swap if necessary
+		3. continue to the next element and if it is in the incorrect order, iterate through the sorted portion (left side)
+           to place the element in the correct place
+        4. Repeat untill the array is sorted
+
+    code:
+        const insertionSort = (arr) => {
+        for (let i = 1; i < arr.length; i++) {
+            let currentValue = arr[i];
+            for (let j = i -1; j >= 0 && arr[j] > currentValue ; j--) {
+                arr[j+1] =a[j]
+            }
+            a[j+1] = currentValue;
+        }
+        return arr;
+        }
+
+    console.log(insertionSort([8, -3, 12, 29, 45, 88, 97]));
+
+time complexity
+	best: O(n)
+	worst naverage: O(n2)
