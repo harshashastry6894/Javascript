@@ -30,8 +30,9 @@ Implemenation:
     console.log(selectionSort([8, -3, 12, 29, 45, 88, 97]));
 
 time complexity
-	best: O(n)
-	worst naverage: O(n2) 
+	best worst naverage: O(n2) 
+space complexity
+    O(1)
 
 Note: better than bubbleSort since we are going to swap at every iteration
     

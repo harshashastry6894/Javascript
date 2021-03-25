@@ -26,3 +26,6 @@ Implemenation:
 time complexity
 	best: O(n)
 	worst naverage: O(n2)
+    
+space complexity
+    O(1)
