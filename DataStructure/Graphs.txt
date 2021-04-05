@@ -1,0 +1,79 @@
+Graphs:
+	Graphs mainly used in recommonditation in netflix and youtube
+	A graph data structure consists of a finite (and possibly mutable) set of vertices or nodes or points, 
+	together with a set of unordered pairs of these vertices for an undirected graph or a set of ordered pairs for a directed graph.
+
+Uses:
+	social network (google maps, connection between friends)
+	music application
+	
+	Vertex - a node
+	Edge - connection between nodes
+	Weighted/Unweighted - values assigned to distances between vertices
+	Directed/Undirected - directions assigned to distanced between vertices
+
+ADDING A VERTEX
+	Write a method called addVertex, which accepts a name of a vertex
+	It should add a key to the adjacency list with the name of the vertex and set its value to be an empty array
+
+ADDING AN EDGE
+	This function should accept two vertices, we can call them vertex1 and vertex2
+	The function should find in the adjacency list the key of vertex1 and push vertex2 to the array
+	The function should find in the adjacency list the key of vertex2 and push vertex1 to the array
+	Don't worry about handling errors/invalid vertices
+	
+REMOVING AN EDGE
+	This function should accept two vertices, we'll call them vertex1 and vertex2
+	The function should reassign the key of vertex1 to be an array that does not contain vertex2
+	The function should reassign the key of vertex2 to be an array that does not contain vertex1
+	Don't worry about handling errors/invalid vertices
+
+REMOVING A VERTEX	
+	The function should accept a vertex to remove
+	The function should loop as long as there are any other vertices in the adjacency list for that vertex
+	Inside of the loop, call our removeEdge function with the vertex we are removing and any values in the adjacency list for that vertex
+	delete the key in the adjacency list for that vertex
+
+class graph {
+    constructor() {
+        this.list = {};
+    }
+
+    addVertex(vertex) {
+        if(!this.list[vertex]) this.list[vertex] = [];
+    }
+
+    addEdge(v1, v2) {
+        if(this.list[v1] && this.list[v2]) {
+         this.list[v1].push(v2);
+         this.list[v2].push(v1);
+        } else if(!this.list[v1]){
+            return v1 + " is not present in the graph";
+        } else {
+            return v2 + " is not present in the graph";
+        }
+    }
+
+    removeEdge(v1, v2) {
+         if(this.list[v1] && this.list[v2]) {
+         this.list[v1] = this.list[v1].filter(v => v !== v2);
+         this.list[v2] = this.list[v2].filter(v => v !== v1);
+        } else if(!this.list[v1]){
+            return v1 + " is not present in the graph";
+        } else {
+            return v2 + " is not present in the graph";
+        }
+    }
+
+    removeVertex(vertex) {
+        while(this.list[vertex].length){
+            var adjacentVertex = this.list[vertex].pop();
+            this.removeEdge(vertex, adjacentVertex);
+        }
+        delete this.list[vertex];
+    }
+}
+
+var g = new graph();
+g.addVertex("Banglore");
+g.addEdge("Banglore", "Hyderabad");

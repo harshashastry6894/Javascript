@@ -1,0 +1,151 @@
+Double Linked List:
+    A data structure that contains a head, tail and length property.
+    Double Linked Lists consist of nodes, and each node has a value and a pointer to next node and prev node
+
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class doubleLinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+
+    push(val) {
+        var newNode = new Node(val);
+        if (this.length === 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            this.tail.next = newNode;
+            newNode.prev = this.tail;
+            this.tail = newNode;
+        }
+        this.length++;
+        return this;
+    }
+
+    unshift(val) {
+        var newNode = new Node(val);
+        if (this.length === 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            this.head.prev = newNode;
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
+
+    pop() {
+        if (this.length === 0) return undefined;
+        var poppedNode = this.tail;
+        if (this.length === 1) {
+            this.tail = null;
+            this.head = null;
+        } else {
+            this.tail = poppedNode.prev;
+            this.tail.next = null;
+            poppedNode.prev = null;
+        }
+
+        this.length--;
+        return poppedNode;
+    }
+
+    shift() {
+        if (this.length === 0) return undefined;
+        var poppedNode = this.head;
+        if (this.length === 1) {
+            this.tail = null;
+            this.head = null;
+        } else {
+            this.head = poppedNode.next;
+            this.head.prev = null;
+            poppedNode.next = null;
+        }
+
+        this.length--;
+        return poppedNode;
+    }
+
+    get(index) {
+        if (index < 0 || index >= this.length) return undefined;
+        var currentNode, count;
+        if (index <= this.length / 2) {
+            count = 0;
+            currentNode = this.head;
+            while (index != count) {
+                currentNode = currentNode.next;
+                count++;
+            }
+        } else {
+            count = this.length - 1;
+            currentNode = this.tail;
+            while (index != count) {
+                currentNode = currentNode.prev;
+                count--;
+            }
+        }
+        return currentNode;
+    }
+
+    set(index, value) {
+        var foundNode = this.get(index);
+        if (foundNode != null) {
+            foundNode.val = value;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    insert(index, value) {
+        if (index < 0 || index > this.length) return false;
+        if (index === 0) {
+            this.unshift(value);
+            return true;
+        }
+        if (index === this.length) {
+            this.push(value);
+            return true;
+        }
+        var newNode = new Node(value);
+        var prevNode = this.get(index - 1);
+        newNode.prev = prevNode;
+        newNode.next = prevNode.next;
+        prevNode.next = newNode;
+        this.length++;
+        return true;
+    }
+
+    remove(index) {
+        if (index < 0 || index >= this.length) return undefined;
+        if (index === 0) return this.shift();
+        if (index === this.length - 1) return this.pop();
+        var prevNode = this.get(index - 1);
+        var poppedNode = prevNode.next;
+        prevNode.next = poppedNode.next;
+        poppedNode.next = null;
+        poppedNode.prev = null;
+        this.length--;
+        return poppedNode;
+    }
+}
+
+var list = new doubleLinkedList();
+list.push("Hello");
+list.push("Harsha");
+list.push("S");
+list.push("Shastry");
+console.log(list.remove(5));

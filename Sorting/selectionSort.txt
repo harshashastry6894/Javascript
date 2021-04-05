@@ -34,5 +34,5 @@ time complexity
 space complexity
     O(1)
 
-Note: better than bubbleSort since we are going to swap at every iteration
+Note: better than bubbleSort since we are not going to swap at every iteration
     
