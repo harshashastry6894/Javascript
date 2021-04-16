@@ -1,5 +1,5 @@
 Linear  Search:
-	In built funvtions -> indexOf, includes, find, findIndex
+	In built functions -> indexOf, includes, find, findIndex
 
 //code	
 const linearSearch = (arr, value) => {
