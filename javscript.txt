@@ -29,24 +29,19 @@
 28.can we use multiple stores in redux if yes then how
 29.what is the use of redux thunk
 30.what is synthetic events
-31. what is reff,wrap
+31.what is reff,wrap
 32.what is key
 33.what is key props (have you ever use key props)
 34.what is the use of react router
 35.what is react hooks
-36.how
- can we access route related props in react
-37.in
- acomponent how can i access history,location
-38.how
- can i create auto save form. i am typing in a  input field of a form
- when i stop typing  in input field the form will be submitted automatically. 
+36.how can we access route related props in react
+37.in acomponent how can i access history,location
+38.how can i create auto save form. i am typing in a  input field of a form when i stop typing  in input field the form will be submitted automatically. 
 39.what is the difference b/w local storage, cookies, session storage.
 40.what is prototype in java script.
 41. what is the difference b/w proto and prototype
 42.what is controlled and uncontrolled components.
-43.how
- can you compare two objects. suppose i have two objects a and b .i have to compare both of them
- they have contained the same value same keys all the properties inside the objects should be same.
+43.how can you compare two objects. suppose i have two objects a and b .i have to compare both of them
+   they have contained the same value same keys all the properties inside the objects should be same.
 44. java script is single thread or multi thread language
 45.explain syncronous and asyncronous.
