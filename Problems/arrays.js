@@ -1,3 +1,15 @@
+//difference b/w arrow and regular
+let name = {
+    fullName: 'Vandna Kapoor',
+    printInRegular: function () {
+        console.log(`My Name is ${this.fullName}`);
+    },
+    printInArrow: () => console.log(`My Name is ${this.fullName}`)
+}
+
+name.printInRegular();
+name.printInArrow();
+
 // factorial
 const factorial = (n) => {
     if (n == 1 || n == 0) return n;
