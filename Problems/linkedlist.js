@@ -81,3 +81,19 @@ var mergeTwoLists = function (l1, l2) {
     if (l2) curr.next = l2;
     return temp.next;
 };
+
+// Linked List Cycle
+// Input: head = [3,2,0,-4], pos = 1
+// Output: true
+var hasCycle = function (head) {
+    let fast = head.next;
+    let slow = head;
+
+    while (fast && fast.next && slow) {
+        fast = fast.next.next;
+        slow = slow.next;
+
+        if (fast === slow) return true;
+    }
+    return false;
+};
