@@ -96,3 +96,17 @@ var hasCycle = function (head) {
     }
     return false;
 };
+
+//Input: head = [1,1,2]
+//Output: [1,2]
+var deleteDuplicates = function(head) {
+     var current = head;    
+    while(current) {
+        if(current.next !== null && current.val == current.next.val) {
+            current.next = current.next.next;
+        } else {
+            current = current.next;
+        }
+    }    
+    return head;    
+};
