@@ -118,16 +118,16 @@ var intersect = function (nums1, nums2) {
 };
 
 // Move Zeroes [0,1,0,3,12] -> [1,3,12,0,0]
-var moveZeroes = function (nums) {
-    var idx = 0;
-    for (var i = 0; i < nums.length; i++) {
-        if (nums[i] !== 0) {
-            nums[idx] = nums[i];
-            nums[i] = idx === i ? nums[i] : 0;
-            idx++;
+const moveZeroes = arr => {
+    const len = arr.length;
+    for (let i = 0; i < len; i++) {
+        if (arr[i] === 0) {
+            arr.push(arr[i]);
+            arr.splice(i, 1);
         }
     }
-};
+    return arr;
+}
 
 // Two Sum
 // nums = [2,7,11,15], target = 9 -> [0,1]
