@@ -50,14 +50,13 @@ var isPalindrome = function (head) {
 // Input: intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5]
 // Output: Intersected at '8'
 var getIntersectionNode = function (headA, headB) {
-    if (!headA || !headB) return null;
-    var curA = headA;
-    var curB = headB;
-    while (curA != curB) {
-        curA = curA == null ? headB : curA.next;
-        curB = curB == null ? headA : curB.next;
+    var currA = headA;
+    var currB = headB
+    while(currA != currB) {
+        currA = currA === null ? headB : currA.next;
+        currB = currB === null ? headA : currB.next;
     }
-    return curA;
+    return currA;
 };
 
 // Merge 2 linked list
