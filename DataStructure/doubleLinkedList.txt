@@ -141,6 +141,21 @@ class doubleLinkedList {
         this.length--;
         return poppedNode;
     }
+	
+	reverse() {
+        var prev = null, next;
+        var curr = this.head;
+        this.head = this.tail
+        this.tail = curr;
+        while(curr) {
+            next = curr.next;
+            curr.next = prev;
+            curr.prev = next;
+            prev = curr;
+            curr = next
+        }
+        return this;
+    }
 }
 
 var list = new doubleLinkedList();

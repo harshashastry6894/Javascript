@@ -89,23 +89,18 @@ class Bst {
         }
     }
 
-    search(value) {
-        if (!this.root) {
-            return false;
-        }
-        var current = this.root, found=false;
-        while (current && !found) {
-            if (value < current.value) {
-                current = current.left;
-            }
-            else if (value > current.value) {
-                current = current.right;
-            }
-            else {
-                found = true;
+   search(item) {
+        if(!this.root) return false;
+        var curr = this.root;
+        while(curr && true) {
+            if(item === curr.value) return true;
+            if(item <= curr.value) {
+                    curr = curr.left;
+            } else {
+                    curr = curr.right;
             }
         }
-        return found;
+        return false;
     }
 }
 
