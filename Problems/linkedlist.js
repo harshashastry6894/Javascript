@@ -110,3 +110,22 @@ var deleteDuplicates = function(head) {
     }    
     return head;    
 };
+
+//Remove Linked List Elements
+//Input: head = [1,2,6,3,4,5,6], val = 6 Output: [1,2,3,4,5]
+//Input: head = [7,7,7,7], val = 7 Output: []
+var removeElements = function(head, value) {
+    if(!head) return null;
+   while(head && head.val === value) {
+            head = head.next;
+        }
+        var curr = head;
+        while(curr) {
+            if(curr.next && curr.next.val === value) {
+                curr.next = curr.next.next
+            } else {
+                curr = curr.next
+            }
+        }
+        return head;
+};
