@@ -41,3 +41,17 @@ let isSymmetric = function (root) {
     }
     return helper(root.left, root.right);
 };
+
+// Convert Sorted Array to Binary Search Tree
+// Input: nums = [-10,-3,0,5,9]
+// Output: [0,-3,9,-10,null,5]
+var sortedArrayToBST = function (nums) {
+    if (nums == null || !nums.length) {
+        return null;
+    }
+    let mid = Math.floor(nums.length / 2);
+    const node = new TreeNode(nums[mid]);
+    node.left = sortedArrayToBST(nums.slice(0, mid));
+    node.right = sortedArrayToBST(nums.slice(mid + 1, nums.length))
+    return node;
+};
