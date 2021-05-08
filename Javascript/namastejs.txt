@@ -11,7 +11,7 @@ How JS works ?
 - JS is synchronous single threaded language
 - JS executes one command at a time in sequential order
 - JS will move to next line once a line execution is completed
-
+================================================================================================================
 How JS code is executed?
 - Every js code executes in execution context
 - execution context is created in 2 phases
@@ -36,7 +36,7 @@ var square4 = square(4)
     - ans: undefined, 4, 16
 
 watch : https://www.youtube.com/watch?v=iLWTnMzWtj4&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=3
-
+================================================================================================================
 Hoisting in js?
     - Hoisting is the default behaviour in js in which variable and function will be hoisted 
       to the top of the execution
@@ -67,5 +67,31 @@ Hoisting in js?
     const getName = () => {
         console.log('Namaste js');
     }
-
-
+================================================================================================================
+null vs undefined ?
+    In JavaScript, undefined is a type, whereas null an object.
+    null is an assigned value. It means nothing.
+    undefined typically means a variable has been declared but not defined yet.
+    null and undefined are falsy values.
+    null and undefined are both primitives. However an error shows that typeof null = object.
+    null !== undefined but null == undefined.
+    ----------------------------------------------------------------------
+    Practical Differences:
+    All of this is great, but what about a practical difference between null and undefined?
+    Consider the following code snippet:
+    let logHi = (str = 'hi') => {
+    console.log(str);
+    }
+    The code above creates a function named logHi. This function requires one parameter and 
+    sets the default of that parameter to hi if it isn’t supplied. Here’s what that looks like:
+    logHi();
+    // hi
+    We can also supply a parameter to overwrite this default:
+    logHi('bye');
+    // bye
+    With default parameters, undefined will use the default while null does not.
+    logHi(undefined);
+    // hi
+    logHi(null);
+    // null
+================================================================================================================
