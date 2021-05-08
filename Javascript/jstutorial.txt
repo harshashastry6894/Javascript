@@ -1,0 +1,74 @@
+How JS works ?
+- Everything in js happens inside the execution context
+- Execution context is like a container and it has 2 component
+1. Memory component:
+    - All the variables and functions are stored in Memory component (key value pair & func)
+    - it is also known as variable environment
+2. Code component:
+    - Code will be executed one at a time.
+    - it is also known as thread of execution (a thread executes code one at a time)
+
+- JS is synchronous single threaded language
+- JS executes one command at a time in sequential order
+- JS will move to next line once a line execution is completed
+
+How JS code is executed?
+- Every js code executes in execution context
+- execution context is created in 2 phases
+- Initial value for variable is undefined and function is entire function code
+- execution will happen in call stack which order the executionof code
+ex: 
+var n = 2;
+function square(num) {
+    var ans = num * num;
+    return ans;
+}
+var square2 = square(2);
+var square4 = square(4)
+1. Memory creation phase
+    - n: undefined, 2
+    - square : {...} entire code of function
+    - square2: undefined, 4
+    - square4: undefined, 16
+2. Code execution phase
+    - when a function starts execution again a new execution context will be created in Memory
+    - num: undefined, 2, 4
+    - ans: undefined, 4, 16
+
+watch : https://www.youtube.com/watch?v=iLWTnMzWtj4&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=3
+
+Hoisting in js?
+    - Hoisting is the default behaviour in js in which variable and function will be hoisted 
+      to the top of the execution
+    --------------------------------------------
+    var x = 7;
+    function getName() {
+        console.log('Namaste js');
+    }
+    getName(); // Namaste js
+    console.log(x) // 7
+    --------------------------------------------
+    getName(); // Namaste js
+    console.log(x) // undefined
+    var x = 7;
+    function getName() {
+        console.log('Namaste js');
+    }
+    -------------------------------------------
+    getName; // shows declaration of func
+    console.log(x) // reference error x is not defined
+    function getName() {
+        console.log('Namaste js');
+    }
+    --------------------------------------------
+    getName(); // getName is not a function ( behaves as a variable)
+    console.log(x) // undefined
+    var x = 7;
+    const getName = () => {
+        console.log('Namaste js');
+    }
+
+How function works in js ?
+- 
+
+
