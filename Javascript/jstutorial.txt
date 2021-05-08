@@ -68,7 +68,4 @@ Hoisting in js?
         console.log('Namaste js');
     }
 
-How function works in js ?
-- 
-
 
