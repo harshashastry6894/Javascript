@@ -95,3 +95,74 @@ null vs undefined ?
     logHi(null);
     // null
 ================================================================================================================
+Scope in js ?
+- Scope in js related to lexical environment
+- lexical scope is the scope of local block along with lexical scope of parent block
+================================================================================================================
+let & const ?
+- let and const are also hoisted but it will be in temporal dead zone (a seperate memory space which cannot be access)
+- After initalizing let and const can be accessed
+- reference error: accessing variable without declaration 
+- syntax error: any error in syntax (declaring x with let and var)
+- type error: type mismatch error (assigning value later to const)
+================================================================================================================
+block ?
+- {} - is a block
+- block is used combine multiple js statement to group
+- let and const are block scope and var is function scope or global scope
+more details: https://www.youtube.com/watch?v=lW_erSjyMeM&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=10
+================================================================================================================
+Debouncing and throttling ?
+- used for optimizing and performance of web app
+================================================================================================================
+closure ?
+- Function along with it's lexical environment bundled together forms a closure
+- Uses of closure
+- currying
+- in async and promise
+ex: function x() {
+    var a =7;
+    function y() {
+        console.log(a);
+    }
+    return y;
+};
+var z = x();
+z() // 7
+--------------------------------------------------------------------------------------------
+function x() {
+    var a =7;
+    function y() {
+        console.log(a);
+    }
+    a = 100;
+    return y;
+};
+var z = x();
+z() // 100
+
+closure imp: https://www.youtube.com/watch?v=eBTBG4nda2A&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=13
+================================================================================================================
+First class function ?
+- A abiliy of a function to call another function and use arguments and return a value is called first class function
+- Function statement or declaration:
+    function a() {
+        console.log('hi');
+    }
+- Function expression:
+    var b = function() {
+        console.log('hi');
+    }
+- Anonymous function:
+    function () {
+        console.log('hi');
+    }
+- Named function:
+    var b = function a() {
+        console.log('hi');
+    }
+================================================================================================================
+callback and event loop?
+- callback function is a function which will be passed as arguments to another function and this callback
+function will be called after calling another function
+https://www.youtube.com/watch?v=8zKuNo4ay8E&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=17 - event loop
