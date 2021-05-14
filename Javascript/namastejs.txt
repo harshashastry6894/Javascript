@@ -114,6 +114,57 @@ more details: https://www.youtube.com/watch?v=lW_erSjyMeM&list=PLlasXeu85E9cQ32g
 ================================================================================================================
 Debouncing and throttling ?
 - used for optimizing and performance of web app
+- debouncing executes the function only after some cooling period.
+- throttling executes the function at a regular interval
+
+ex: 
+export default function App() {
+  const debounce = (func, timeout = 300) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func(...args);
+      }, timeout);
+    };
+  };
+  const saveInput = (e) => {
+    console.log("querying data", e.target.value);
+  };
+  const processChange = debounce((e) => saveInput(e));
+
+  return (
+    <div className="App">
+      <input type="text" onKeyUp={processChange} />
+    </div>
+  );
+}
+
+export default function App() {
+  const throttle = (func, timeout = 3000) => {
+    let flag = true;
+    return (...args) => {
+      if (flag) {
+        func(...args);
+      }
+      flag = false;
+      setTimeout(() => {
+        flag = true;
+      }, timeout);
+    };
+  };
+  const saveInput = (e) => {
+    console.log("querying data", e.target.value);
+  };
+  const processChange = throttle((e) => saveInput(e));
+
+  return (
+    <div className="App">
+      <input type="text" onKeyUp={processChange} />
+    </div>
+  );
+}
+
 ================================================================================================================
 closure ?
 - Function along with it's lexical environment bundled together forms a closure
@@ -166,3 +217,23 @@ callback and event loop?
 - callback function is a function which will be passed as arguments to another function and this callback
 function will be called after calling another function
 https://www.youtube.com/watch?v=8zKuNo4ay8E&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=17 - event loop
+================================================================================================================
+async vs defer ?
+Normal:
+<script src="some.js />
+-html parsing -> script fetching and executing -> html parsing
+order of execution is maintained
+decrease performance if script takes time to download and executes
+
+async:
+<script async src="some.js />
+-html parsing -> script executing -> html parsing
+-script fetching
+order of execution is not maintained
+blocks dom when one script is dependent on another
+
+defer:
+<script defer src="some.js />
+-html parsing -> script executing
+-script fetching
+order of execution is maintained
