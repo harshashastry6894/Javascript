@@ -12,21 +12,19 @@ JS
 11.Explain event loop
 12.What is the use of this keyword in java script
 13.Let a=10 and var b=10 then what will be the answere when i compare a===b
-14. what is virtual dom in react js
-15.what is real dom
-16.what is the problem in direct update dome
-17.node update by vitual dom and direct update real node in dom
-18.what is pure component
-19.in acomponent how can i access history,location
-20.what is prototype in java script.
-21. what is the difference b/w proto and prototype
-22.what is controlled and uncontrolled components.
-23.how can you compare two objects. suppose i have two objects a and b .i have to compare both of them
+14.in acomponent how can i access history,location
+15.what is prototype in java script.
+16. what is the difference b/w proto and prototype
+17.what is controlled and uncontrolled components.
+18.how can you compare two objects. suppose i have two objects a and b .i have to compare both of them
    they have contained the same value same keys all the properties inside the objects should be same.
-24. java script is single thread or multi thread language
-25.explain syncronous and asyncronous.
-26.how can i create auto save form. i am typing in a  input field of a form when i stop typing  in input field the form will be submitted automatically. 
-27.what is the difference b/w local storage, cookies, session storage.
+19. java script is single thread or multi thread language
+20.explain syncronous and asyncronous.
+21.how can i create auto save form. i am typing in a  input field of a form when i stop typing  in input field the form will be submitted automatically. 
+22.what is the difference b/w local storage, cookies, session storage.
+23.How does prototypal inheritance work, and how is it different from classical inheritance?
+24.How does this work?
+25.What is event bubbling and how does it work?
 
 REACT JS
 1.what is functional components
@@ -45,7 +43,12 @@ REACT JS
 11.what is reff,wrap
 12.what is key
 13.what is key props (have you ever use key props)
-14.what is the use of react router
-15.what is react hooks
-16.how can we access route related props in react
+14. what is virtual dom in react js
+15.what is real dom
+16.what is the problem in direct update dome
+17.node update by vitual dom and direct update real node in dom
+18.what is pure component
+19.what is the use of react router
+20.what is react hooks
+21.how can we access route related props in react
 
