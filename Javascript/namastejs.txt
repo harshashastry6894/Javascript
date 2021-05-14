@@ -237,3 +237,79 @@ defer:
 -html parsing -> script executing
 -script fetching
 order of execution is maintained
+================================================================================================================
+Currying in js?
+- Currying is an advanced technique to transform a function of arguments n, to n functions of one or less arguments.
+Example of a curried function:
+function add (a) {
+  return function(b){
+    return a + b;
+  }
+}
+add(3)(4)
+
+-For Example, if we have a function f(a,b) , then the function after currying, will be transformed to f(a)(b).
+-By using the currying technique, we do not change the functionality of a function, we just change the way it is invoked.
+Let’s see currying in action:
+function multiply(a,b){
+  return a*b;
+}
+function currying(fn){
+  return function(a){
+    return function(b){
+      return fn(a,b);
+    }
+  }
+}
+
+var curriedMultiply = currying(multiply);
+multiply(4, 3); // Returns 12
+curriedMultiply(4)(3); // Also returns 12
+As one can see in the code above
+we have transformed the function multiply(a,b) to a function curriedMultiply , which takes in one parameter at a time.
+================================================================================================================
+understanding this?
+
+//hall
+this.computer = 'dell';
+
+this.smallRoom = {
+	computer: 'macbook',
+  print: function () {
+  console.log(`my computer is ${this.computer}`)
+  },
+  printArrow:  () => {
+  console.log(`my computer is ${this.computer}`)
+  }
+}
+let smallRoom = {
+	computer: 'macbook',
+  print: function () {
+  console.log(`my computer is ${this.computer}`)
+  },
+  printArrow: () => {
+  console.log(`my computer is ${this.computer}`)
+  }
+}
+
+function secondRoom() {
+console.log(`my computer is ${this.computer}`)
+}
+
+const secondRoomArrow = () => {
+console.log(`my computer is ${this.computer}`)
+}
+
+//let 
+console.log(`my computer is ${this.computer}`) // "my computer is dell"
+this.smallRoom.print() // "my computer is macbook"
+this.smallRoom.printArrow() //"my computer is dell"
+smallRoom.print()// "my computer is macbook"
+smallRoom.printArrow()// "my computer is macbook"
+secondRoom() // "my computer is dell"
+secondRoom.call(this) // for use strict
+secondRoomArrow() //  "my computer is dell"
+================================================================================================================
+Differences between _proto_ and prototype and prototype inheritance ?
+__proto__ is the actual object which contains information about methods and property
+ prototype is the object that is used to build __proto__
