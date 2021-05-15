@@ -215,7 +215,8 @@ First class function ?
 ================================================================================================================
 callback and event loop?
 - callback function is a function which will be passed as arguments to another function and this callback
-function will be called after calling another function
+function will be called after calling another function (another function is called as higher order function)
+- Pure function is function without any side effects
 https://www.youtube.com/watch?v=8zKuNo4ay8E&list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP&index=17 - event loop
 ================================================================================================================
 async vs defer ?
@@ -313,3 +314,45 @@ secondRoomArrow() //  "my computer is dell"
 Differences between _proto_ and prototype and prototype inheritance ?
 __proto__ is the actual object which contains information about methods and property
  prototype is the object that is used to build __proto__
+ ================================================================================================================
+ local storage and session storage ?
+ - cookies can store up to 4000bytes and it will sent on each request
+ - local storage and session storage can store upto 5MB
+ - session storage store data particular to current user session (user closes tab or browser)
+ - local storage stores data untill user clear the cache memory
+
+ ex: localStorage.setItem('user', JSON.stringfy(user));
+ ================================================================================================================
+method or function chaining ?
+- Function chaining is a pattern in JavaScript where multiple functions are called on the same object consecutively. 
+- Using the same object reference, multiple functions can be invoked. 
+- It increases the readability of the code and means less redundancy.
+var Obj = {
+  result: 0,
+  addNumber: function(a, b) {
+    this.result = a + b;
+    return this;
+  },
+
+  multiplyNumber: function(a) {
+    this.result = this.result * a;
+    return this;
+  },
+ 
+  divideNumber: function(a) {
+    this.result = this.result / a;
+    return this;
+  }
+}
+
+Obj.addNumber(10, 20).multiplyNumber(10).divideNumber(10);
+ ================================================================================================================
+ Anonymous function or immediately invoked function expresssion (IIFS)
+ - A function without a name and invoked immediately is called IIFS
+ (function(){}())
+ ex: (function(i){
+   return i +1
+ }(j))
+ ================================================================================================================
+Generators and iterators
+
