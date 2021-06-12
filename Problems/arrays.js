@@ -1,22 +1,4 @@
-//difference b/w arrow and regular
-//unlike Regular functions, arrow function does not have their own "this" keyword.
-
-//The value of this inside an arrow function remains the same throughout the lifecycle of the function 
-//and is always bound to the value of this in the closest non-arrow parent function.
-let name = {
-    firstName: 'Harsha',
-    printInRegular: function () {
-        this.lastname = 'Shastry'
-        console.log(`My Name is ${this.firstName} ${this.lastname}`);
-    },
-    printInArrow: () => {
-        this.lastname = 'Shastry'
-        console.log(`My Name is ${this.firstName} ${this.lastname}`);
-    }
-}
-
-name.printInRegular();
-name.printInArrow();
+https://www.freecodecamp.org/news/manipulating-arrays-in-javascript/ - array manupilatinon
 
 // factorial
 const factorial = (n) => {

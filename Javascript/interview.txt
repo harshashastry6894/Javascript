@@ -52,3 +52,82 @@ REACT JS
 20.what is react hooks
 21.how can we access route related props in react
 
+-------------------------------------------------------------------------------
+Sapiens:
+async function Test() {}
+Test()
+    .then(x => console.log(x))
+    .catch(x => console.log(x))
+
+
+class OwnMath {
+    constructor(a, b) {
+        this.x = a;
+        this.y = b;
+    }
+
+    add() {
+        return this.x + this.y
+    }
+
+    sub() {
+        return this.x - this.y
+    }
+
+    mul() {
+        return this.x * this.y
+    }
+}
+const m = new OwnMath(1, 2);
+console.log(m.add().sub().mul());
+
+function Test() {
+    return new Promise((reject) => reject(false));
+}
+
+async function Test() { }
+
+
+Test().then(re => console.log('success', re))
+    .catch(re => console.log('failure', re));
+
+-------------------------------------------------------------------------------
+Nium:
+
+var a = [10, 20, 30, 40]
+var b = [5, 3, 12, 12, 44, 6, 6]
+
+var op1 = new Set([a, b]);
+var op2 = [... new Set([a, b])]
+
+console.log(op1)
+console.log(op2)
+
+var x = 10;
+var boy = function () {
+    console.log(x);
+    var x = 20;
+}
+boy()
+
+var x = 10;
+boy()
+var boy = function () {
+    console.log(x);
+    var x = 20;
+}
+
+var x = 10;
+boy()
+function boy() {
+    console.log(x);
+    var x = 20;
+}
+
+// how to restrict object not to change the value
+let a = { name: 'harsha' };
+a.name = 'suhas'
+console.log(a)
+const b = { name: 'shastry' };
+b.name = 'suhas'
+console.log(b)
