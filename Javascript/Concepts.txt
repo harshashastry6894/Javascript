@@ -354,5 +354,51 @@ Obj.addNumber(10, 20).multiplyNumber(10).divideNumber(10);
    return i +1
  }(j))
  ================================================================================================================
-Generators and iterators
+Prevent Objects From Being Changed in JavaScript ?
+const :
+const myObject = {
+  firstProp: true,
+  secondProp: 'Yes'
+}
+myObject = false            // not allowed (assign)
+delete myObject.firstProp   // allowed (delete)
+myObject.secondProp = 'No'  // allowed (update)
+myObject.thirdProp = 'Yes'  // allowed (add)
+------------------------------------------------------------------------------------------------------------------
+preventExtensions :
+const myObject = {
+  firstProp: true,
+  secondProp: 'Yes'
+}
+Object.preventExtensions(myObject);
+myObject.isExtensible()     // false
+myObject = false            // not allowed (assign)
+delete myObject.firstProp   // allowed (delete)
+myObject.secondProp = 'No'  // allowed (update)
+myObject.thirdProp = 'Yes'  // not allowed (add)
+------------------------------------------------------------------------------------------------------------------
+seal:
+const myObject = {
+  firstProp: true,
+  secondProp: 'Yes'
+}
+Object.seal(myObject);
+myObject.isSealed()         // true
+myObject = false            // not allowed (assign)
+delete myObject.firstProp   // not allowed (delete)
+myObject.secondProp = 'No'  // allowed (update)
+myObject.thirdProp = 'Yes'  // not allowed (add)
+------------------------------------------------------------------------------------------------------------------
+freeze:
+const myObject = {
+  firstProp: true,
+  secondProp: 'Yes'
+}
+Object.freeze(myObject);
+myObject.isFrozen()         // true
+myObject = false            // not allowed (assign)
+delete myObject.firstProp   // not allowed (delete)
+myObject.secondProp = 'No'  // not allowed (update)
+myObject.thirdProp = 'Yes'  // not allowed (add)
+
 
