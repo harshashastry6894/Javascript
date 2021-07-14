@@ -1,0 +1,38 @@
+Trie:
+  Trie data structure is used for autocomplete searching or spell checking in effecient way
+  
+  class Trie {
+  constructor() {
+    this.root = {};
+  }
+
+  insert(word) {
+    let cur = this.root;
+    for (let c of word) {
+      if (cur[c] == null) cur[c] = {};
+      cur = cur[c];
+    }
+    cur.isWord = true;
+  }
+
+  traverse(word) {
+    let cur = this.root;
+    for (let c of word) {
+      cur = cur[c];
+      if (cur == null) return null;
+    }
+    return cur;
+  }
+
+  search(word) {
+    const res = this.traverse(word);
+    return res != null && res.isWord === true;
+  }
+
+  startsWith(prefix) {
+    return this.traverse(prefix) != null;
+  }
+}
+
+var list = new Trie();
+list.insert("cat");
