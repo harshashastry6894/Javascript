@@ -114,14 +114,11 @@ const moveZeroes = arr => {
 // Two Sum
 // nums = [2,7,11,15], target = 9 -> [0,1]
 var twoSum = function (nums, target) {
-    var res = [];
-    for (var i = 0; i < nums.length; i++) {
-        var value = target - nums[i];
-        var found = res.findIndex(ele => ele === nums[i]);
-        if (found >= 0) {
-            return [found, i]
-        }
-        res.push(value);
+    const fc = {}
+    for(const [i, num] of nums.entries()) {
+        let diff = target - num 
+        if(diff in fc) return [fc[diff], i]
+        fc[num] = i
     }
 };
 
