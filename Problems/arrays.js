@@ -16,14 +16,13 @@ function rotate(arr, d) {
 
 // Find the majority element in the array and element that appears more than N/2 times in the array.
 function majority(arr) {
-    var cutOff = Math.floor(arr.length / 2);
-    var fc = {};
-    for (var i = 0; i < arr.length; i++) {
-        var ele = arr[i];
-        fc[ele] = (fc[ele] || 0) + 1;
-        if (fc[ele] > cutOff) return ele;
+    let fc = {}, majority = arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        fc[arr[i]] = (fc[arr[i]] || 0) + 1
+        if (i === 0) majority = arr[i]
+        if(i !== 0 && fc[arr[i]] > fc[majority]) majority = arr[i]
     }
-    return -1;
+    return majority !== undefined ? majority : -1
 }
 
 //Remove Duplicates from Sorted Array
