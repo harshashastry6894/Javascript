@@ -92,3 +92,39 @@ var longestCommonPrefix = function (strs) {
     }
     return r;
 };
+
+// Roman to Integer
+// https://leetcode.com/problems/roman-to-integer/
+var romanToInt = function(s) {
+     if (!s || s.length === 0) {
+    return 0;
+  }
+
+ let map = {
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000
+    }
+
+  let i = s.length - 1;
+  let result = map[s[i]];
+
+  while (i > 0) {
+    const curr = map[s[i]];
+    const prev = map[s[i - 1]];
+
+    if (prev >= curr) {
+      result += prev;
+    } else {
+      result -= prev;
+    }
+
+    i--;
+  }
+
+  return result;
+};
