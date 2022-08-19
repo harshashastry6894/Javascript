@@ -143,3 +143,16 @@ function removeAnagrams(words) {
     }
     return newWords;
 };
+
+// Count Prefixes of a Given String 
+// https://leetcode.com/problems/count-prefixes-of-a-given-string/
+var countPrefixes = function(words, s) {
+    if(!words.length) return 0
+    let count = 0
+    for(let word of words) {
+        const len = word.length
+        const subString = s.slice(0, len)
+        if(word === subString) count ++
+    }
+    return count
+};
