@@ -162,6 +162,6 @@ or
 var countPrefixes = function(words, s) {
     let count =0
     for (word of words) 
-        if (s.match("^"+word)) count++
+        if (s.s.startsWith(word)) count++
     return count;
 };
