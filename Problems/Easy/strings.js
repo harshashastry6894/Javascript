@@ -128,3 +128,18 @@ var romanToInt = function(s) {
 
   return result;
 };
+
+// Find Resultant Array After Removing Anagrams
+// https://leetcode.com/problems/find-resultant-array-after-removing-anagrams/
+function removeAnagrams(words) {
+    const newWords = [];
+    let prevSortedWord = '';
+    for (const word of words) {
+        const sortedWord = word.split('').sort().join('');
+        if (sortedWord === prevSortedWord) continue;
+        
+        prevSortedWord = sortedWord;
+        newWords.push(word);
+    }
+    return newWords;
+};
