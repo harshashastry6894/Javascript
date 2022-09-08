@@ -30,3 +30,40 @@ var rotateTheBox = function(box) {
     }
     return rotate90box
 };
+
+
+// Maximum Product of Word Lengths
+// https://leetcode.com/problems/maximum-product-of-word-lengths/
+// Given a string array words, return the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. If no such two words exist, return 0.
+// Example 1:
+// Input: words = ["abcw","baz","foo","bar","xtfn","abcdef"]
+// Output: 16
+// Explanation: The two words can be "abcw", "xtfn".
+
+const areStringsUnique = (a, b) => {
+  for (let i = 0; i < a.length; i++){
+    if ( b.includes(a[i]) ){
+       return false;
+    }
+  } 
+  return true;
+};
+
+const maxProduct = function(words) {
+  let max = 0;
+  for (let i = 0; i < words.length - 1; i++) {
+    for (let j = i + 1; j < words.length; j++) {
+      const a = words[i];
+      const b = words[j];
+      let unique = true;
+
+      // compare wordz
+      if ( areStringsUnique(words[i], words[j]) ) {
+        max = Math.max( max, (words[i].length * words[j].length) )
+      }
+      
+    }
+  }
+
+  return max;
+};  
