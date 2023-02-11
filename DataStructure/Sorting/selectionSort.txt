@@ -35,4 +35,8 @@ space complexity
     O(1)
 
 Note: better than bubbleSort since we are not going to swap at every iteration
+
+Selection sort is efficient where swapping operation is costly as it makes a maximum of N swaps for an array of size N.
+Bubble sort is the simplest stable in-place sorting algorithm and very easy to code.
+Insertion sort makes fewer comparisons compared to the other two algorithms and hence is efficient where comparison operation is costly
     
