@@ -23,6 +23,24 @@ Approach:
     return []
 };
 
+plm: Best Time to Buy and Sell Stock -> https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+Approach: 
+  1. initialize profit to 0 and min value as first value (min value is used to track the minimum value to buy stock)
+  2. Traverse through the array and find the cost by subtracting current value with minimum value 
+  3. find the max profit by comparing with the previous profit and the cost 
+  4. find the mini value by comparing the previous minimum value and the current value
+
+function maxProfit(prices: number[]): number {
+    let profit = 0
+    let min = prices[0]
+    for (let i = 1; i < prices.length; i++) {
+        const cost = prices[i] - min
+        profit = Math.max(profit, cost)
+        min = Math.min(min, prices[i])
+    }
+    return profit
+};
+
 
 
 
