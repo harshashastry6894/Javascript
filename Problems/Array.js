@@ -41,6 +41,17 @@ function maxProfit(prices: number[]): number {
     return profit
 };
 
-
+plm: Contains Duplicate -> https://leetcode.com/problems/contains-duplicate/
+function containsDuplicate(nums: number[]): boolean {
+    let fc = {};
+    for (let i = 0; i < nums.length; i++) {
+        if (fc[nums[i]]) {
+            return true;
+        } else {
+            fc[nums[i]] = (fc[nums[i]] || 0) + 1;
+        }
+    }
+    return false
+};
 
 
