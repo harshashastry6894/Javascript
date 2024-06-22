@@ -112,13 +112,17 @@ const moveZeroes = arr => {
 
 // Two Sum
 // nums = [2,7,11,15], target = 9 -> [0,1]
-var twoSum = function (nums, target) {
+function twoSum(nums: number[], target: number): number[] {
     const fc = {}
-    for(const [i, num] of nums.entries()) {
-        let diff = target - num 
-        if(diff in fc) return [fc[diff], i]
-        fc[num] = i
+    for (let i = 0; i < nums.length; i++) {
+        const diff = target - nums[i]
+        if (diff in fc) {
+            return [fc[diff], i]
+        } else {
+            fc[nums[i]] = i
+        }
     }
+    return [-1, -1]
 };
 
 // Input: N = 5, S = 12, A[] = {1,2,3,7,5}
