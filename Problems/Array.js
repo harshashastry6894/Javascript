@@ -7,6 +7,8 @@ Approach:
   5. else store the current value and it's index in fc
   4. if for loop breaks then return  [-1, -1]
 
+Sample: nums = [2,7,11,15], target = 9 -> [0,1]
+
 function twoSum(nums: number[], target: number): number[] {
     const fc = {}
     for (let i = 0; i < nums.length; i++) {
@@ -27,6 +29,8 @@ Approach:
   3. find the max profit by comparing with the previous profit and the cost 
   4. find the mini value by comparing the previous minimum value and the current value
 
+Sample: prices = [7,1,5,3,6,4] -> 7
+
 function maxProfit(prices: number[]): number {
     let profit = 0
     let min = prices[0]
@@ -39,6 +43,7 @@ function maxProfit(prices: number[]): number {
 };
 
 plm: Contains Duplicate -> https://leetcode.com/problems/contains-duplicate/
+Sample: [1,2,3,1] -> true
 function containsDuplicate(nums: number[]): boolean {
     let fc = {};
     for (let i = 0; i < nums.length; i++) {
