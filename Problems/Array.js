@@ -47,7 +47,7 @@ Sample: [1,2,3,1] -> true
 function containsDuplicate(nums: number[]): boolean {
     let fc = {};
     for (let i = 0; i < nums.length; i++) {
-        if (fc[nums[i]]) {
+        if (nums[i] in fc) {
             return true;
         } else {
             fc[nums[i]] = (fc[nums[i]] || 0) + 1;
