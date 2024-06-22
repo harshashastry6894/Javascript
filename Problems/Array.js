@@ -24,22 +24,21 @@ function twoSum(nums: number[], target: number): number[] {
 
 plm: Best Time to Buy and Sell Stock -> https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 Approach: 
-  1. initialize profit to 0 and min value as first value (min value is used to track the minimum value to buy stock)
-  2. Traverse through the array and find the cost by subtracting current value with minimum value 
-  3. find the max profit by comparing with the previous profit and the cost 
-  4. find the mini value by comparing the previous minimum value and the current value
+  1. initialize maxProfit to 0
+  2. Traverse through the array and find the currentPrice by subtracting current value with previous value 
+  3. if currentPrice is greater than 0 then add it to maxProfit
+  4. After loop breaks return the maxProfit
 
 Sample: prices = [7,1,5,3,6,4] -> 7
 
 function maxProfit(prices: number[]): number {
-    let profit = 0
-    let min = prices[0]
+    if (prices.length <= 1) return 0;
+    let maxProfit = 0;
     for (let i = 1; i < prices.length; i++) {
-        const cost = prices[i] - min
-        profit = Math.max(profit, cost)
-        min = Math.min(min, prices[i])
+        const currentPrice = prices[i] - prices[i - 1];
+        if (currentPrice > 0) maxProfit += currentPrice;
     }
-    return profit
+    return maxProfit;
 };
 
 plm: Contains Duplicate -> https://leetcode.com/problems/contains-duplicate/
