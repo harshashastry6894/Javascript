@@ -55,4 +55,22 @@ function containsDuplicate(nums: number[]): boolean {
     return false
 };
 
-
+plm: Product of Array Except Self -> https://leetcode.com/problems/product-of-array-except-self/description/
+Sample: [1,2,3,4] -> [24, 12, 8, 6]
+function productExceptSelf(nums: number[]): number[] {
+    const length = nums.length;
+    const result = new Array(length).fill(1);
+    
+    let prefixProduct = 1;
+    for (let i = 0; i < length; i++) {
+        result[i] *= prefixProduct;
+        prefixProduct *= nums[i];
+    }
+    let suffixProduct = 1;
+    for (let i = length - 1; i >= 0; i--) {
+        result[i] *= suffixProduct;
+        console.log(result[i], 'result')
+        suffixProduct *= nums[i];
+    }
+    return result;
+};
