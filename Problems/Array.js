@@ -8,7 +8,6 @@ Approach:
   4. if for loop breaks then return  [-1, -1]
 
 Sample: nums = [2,7,11,15], target = 9 -> [0,1]
-
 function twoSum(nums: number[], target: number): number[] {
     const fc = {}
     for (let i = 0; i < nums.length; i++) {
@@ -30,7 +29,6 @@ Approach:
   4. After loop breaks return the maxProfit
 
 Sample: prices = [7,1,5,3,6,4] -> 7
-
 function maxProfit(prices: number[]): number {
     if (prices.length <= 1) return 0;
     let maxProfit = 0;
