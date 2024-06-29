@@ -21,7 +21,7 @@ function twoSum(nums: number[], target: number): number[] {
     return [-1, -1]
 };
 
-plm: Best Time to Buy and Sell Stock -> https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+Plm: Best Time to Buy and Sell Stock -> https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 Approach: 
   1. initialize maxProfit to 0
   2. Traverse through the array and find the currentPrice by subtracting current value with previous value 
@@ -39,7 +39,7 @@ function maxProfit(prices: number[]): number {
     return maxProfit;
 };
 
-plm: Contains Duplicate -> https://leetcode.com/problems/contains-duplicate/
+Plm: Contains Duplicate -> https://leetcode.com/problems/contains-duplicate/
 Sample: [1,2,3,1] -> true
 function containsDuplicate(nums: number[]): boolean {
     let fc = {};
@@ -53,7 +53,7 @@ function containsDuplicate(nums: number[]): boolean {
     return false
 };
 
-plm: Product of Array Except Self -> https://leetcode.com/problems/product-of-array-except-self/description/
+Plm: Product of Array Except Self -> https://leetcode.com/problems/product-of-array-except-self/description/
 Sample: [1,2,3,4] -> [24, 12, 8, 6]
 function productExceptSelf(nums: number[]): number[] {
     const length = nums.length;
@@ -72,3 +72,15 @@ function productExceptSelf(nums: number[]): number[] {
     }
     return result;
 };
+
+Plm: Maximum Subarray -> https://leetcode.com/problems/maximum-subarray/description/
+Sample: [-2,1,-3,4,-1,2,1,-5,4] -> The subarray [4,-1,2,1] has the largest sum 6.
+function maxSubArray(nums: number[]): number {
+    let sum = 0, max = nums[0]
+    for(let i = 0; i < nums.length; i++) {
+        sum += nums[i]
+        if(sum > max) max = sum
+        if(sum < 0) sum = 0
+    }
+     return max
+}
