@@ -3,7 +3,7 @@ Merge Sort:
 	
 Implemenation:
 	psuedo code:
-		1. create an empty array, take a look at the smallest values in each inpiut arry
+		1. create an empty array, take a look at the smallest values in each input array
 		2. while there are still values
             1. if a[j] > a[j+1] -> swap
             2. return sorted array
