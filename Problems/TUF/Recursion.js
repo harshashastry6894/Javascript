@@ -25,6 +25,12 @@ function generateSubsequences(index, arr, current) {
     return;
   }
 
+// To Skip Duplictaes (sort it first)
+//   if (index > 0 && arr[index] === arr[index - 1]) {
+//     generateSubsequences(index + 1, arr, current);
+//     return;
+//   }
+
   // Pick the current element
   generateSubsequences(index + 1, arr, current.concat(arr[index]));
 
@@ -39,6 +45,7 @@ function generateSubsequences(index, arr, current) {
 
 // Modify the solution to give only the count of subsequences whose sum is equal to target
 // Modify the solution to give only first subsequence whose sum is equal to target
+// Modify the solution to print all the sums of subsequences
 
 function generateSubsequencesSum(index, arr, current, target, sum) {
     if (index === arr.length) {
