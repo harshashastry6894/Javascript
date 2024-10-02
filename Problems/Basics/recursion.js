@@ -42,38 +42,3 @@ const reverseStringIterative = (str) => {
   }
   return reversed;
 };
-
-//=========================== Hard ======================================== 
-
-// const s = "abc";
-// const f = "";
-// console.log("All possible subsequences are:");
-// solve(0, s, f);
-function solve(i, s, f) {
-  if (i === s.length) {
-    console.log(f); // Print the current subsequence
-    return;
-  }
-
-  // Include the character at index i
-  solve(i + 1, s, f + s.charAt(i));
-
-  // Exclude the character at index i
-  solve(i + 1, s, f);
-}
-
-// const arr = [1, 2, 3];
-// console.log("All possible subsequences are:");
-// generateSubsequences(0, arr, []);
-function generateSubsequences(index, arr, current) {
-  if (index === arr.length) {
-    console.log(current); // Print the current subsequence
-    return;
-  }
-
-  // Include the current element
-  generateSubsequences(index + 1, arr, current.concat(arr[index]));
-
-  // Exclude the current element
-  generateSubsequences(index + 1, arr, current);
-}
