@@ -115,7 +115,17 @@ more details: https://www.youtube.com/watch?v=lW_erSjyMeM&list=PLlasXeu85E9cQ32g
 Debouncing and throttling ?
 - used for optimizing and performance of web app
 - debouncing executes the function only after some cooling period.
+  When an event occurs, a timer is set.
+  If the event is triggered again before the timer expires, the previous timer is cleared and a new timer is set.
+  The function is executed only when the timer completes without being interrupted. 
 - throttling executes the function at a regular interval
+  When an event occurs, the function is called immediately.
+  Subsequent calls are ignored until a certain amount of time has passed.
+  After the time period, the function can be called again.
+
+When to Use
+  - Use Debouncing for events where you want to wait for a user to stop performing an action, like typing in a search bar or resizing a window.
+  - Use Throttling for events that need to happen at regular intervals, like scrolling or resizing, where you want to ensure that the event handler doesn’t run too frequently.
 
 ex: 
 export default function App() {
